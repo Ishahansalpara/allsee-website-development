@@ -7,7 +7,7 @@ const NavbarLayout = () => {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="main-content">
         <Outlet />
       </main>
       <Footer />
