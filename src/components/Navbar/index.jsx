@@ -37,9 +37,18 @@ const Navbar = () => {
 
       <NavbarMobileMenuIcon onClick={toggleMenu} src ={isMenuOpen ? "/assets/close_circle.svg": "/assets/menu.svg"} />
       <NavbarMobileMenu className={isMenuOpen ? "active" : ""}>
-        <NavbarMobileItem to="/"  onClick={toggleMenu}>Home</NavbarMobileItem>
-        <NavbarMobileItem to="/about" onClick={toggleMenu}>About</NavbarMobileItem>
-        <NavbarMobileItem to="/contact" onClick={toggleMenu}>Contact</NavbarMobileItem>
+        <NavbarMobileItem to="/"  onClick={toggleMenu}>
+        Home
+        </NavbarMobileItem>
+        <Divider />
+        <NavbarMobileItem to="/about" onClick={toggleMenu}>
+        About
+        </NavbarMobileItem>
+        <Divider />
+        <NavbarMobileItem to="/contact" onClick={toggleMenu}>
+        Contact
+        </NavbarMobileItem>
+        <Divider />
         <NavbarMobileItem to="/categories" onClick={toggleMenu}>Categories</NavbarMobileItem>
         <Anchor href="#">
           <CTAEnquiryNow>Enquiry now</CTAEnquiryNow>
