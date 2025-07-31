@@ -54,3 +54,27 @@ export const stats =[
     description: "With 5+ years in the industry, we are committed to delivering excellence in every product."
   },
 ];
+
+export const categories = [
+  {
+    id: 0,
+    title: "Corporate Wear",
+    description: "Smart, durable apparel for every proffesional team",
+    image: "/assets/corporate_wear.jpg",
+    link:"/categories/corporate-wear"
+  },
+  {
+    id: 1,
+    title: "Hotel Linen",
+    description:"Luxury trxtiles crafted for guest comfort",
+    image: "/assets/hotel_linen.jpg",
+    link:"/categories/hotel-linen"
+  },
+  {
+    id: 2,
+    title: "Hospital Linen",
+    description: "Hygienic medical fabrics built for care",
+    image: "/assets/hospital_linen.png",
+    link:"/categories/hospital-linen"
+  },
+]
