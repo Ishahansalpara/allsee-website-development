@@ -4,8 +4,8 @@ import styled from "styled-components";
 export const FooterWrapper = styled.footer`
   width: 100%;
   position: relative;
-  background: #0b0909;
-  color: ${({ theme }) => theme?.colors?.secondaryText || "#ffffff"};
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme?.colors?.primaryText};
   overflow: hidden;
 `;
 
@@ -49,17 +49,18 @@ export const BrandLogo = styled.img`
 
 export const BrandTitle = styled.h4`
   margin: 0;
-  font-size: ${({ theme }) => theme.typography.desktopSubHeading};
+  font-size: 25px;
   letter-spacing: 1.1px;
   font-weight: 600;
   font-family: "Playfair Display";
-  color:${({ theme }) => theme?.colors?.secondaryText};
+  color:${({ theme }) => theme?.colors?.primaryText};
 `;
 
 export const Tagline = styled.p`
   margin: 8px 0 4px;
-  font-size: 18px;
-  color: ${({ theme }) => theme?.colors?.secondaryText};
+  font-size: ${({ theme }) => theme.typography.desktopBody};
+  color: ${({ theme }) => theme?.colors?.primaryText};
+  font-family: "Lato", serif;
 `;
 
 export const Hint = styled.p`
@@ -106,17 +107,18 @@ export const Column = styled.nav`
 
 export const ColumnTitle = styled.h5`
   margin: 0 0 10px 0;
-  color: ${({ theme }) => theme?.colors?.secondaryText};
+  color: ${({ theme }) => theme?.colors?.primaryText};
   font-size: 18px;
   font-weight: 700;
-  font-family: "Playfair Display";
+  font-family: "Lato", serif;
 `;
 
 export const ItemLink = styled.a`
   text-decoration: none;
-  color: ${({ theme }) => theme?.colors?.secondaryText};
+  color: ${({ theme }) => theme?.colors?.primaryText};
   font-size: ${({ theme }) => theme.typography.mobileBody};
   opacity: 0.9;
+  font-weight: 500;
   font-family: "Lato", serif;
   transition: color 0.2s ease, opacity 0.2s ease;
 
