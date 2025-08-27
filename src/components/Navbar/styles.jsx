@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router';
 
 export const NavbarWrapper = styled.nav`
-    background-color: ${({ theme }) => theme.colors.primary};
+    background: rgba(0, 0, 0, 0.3); /* black with transparency */
     width: 100%;
     height: 80px;
     padding: 0 20px;
-    border-bottom: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb4b;
     position: fixed;
     z-index: 1000;
     top: 0;
@@ -54,7 +54,7 @@ export const NavLinks = styled.div`
 
 export const NavItem = styled(NavLink)`
     width: fit-content;
-    color: ${({theme}) => theme.colors.primaryText};
+    color: ${({theme}) => theme.colors.secondaryText};
     font-size: ${({theme}) => theme.typography.desktopBody};
     cursor: pointer;
     text-decoration: none;
@@ -141,7 +141,7 @@ export const NavbarMobileMenu = styled.div`
     top: 100%;
     left: 100%;
     width: 100%;
-    background-color: ${({theme}) => theme.colors.secondary};
+    background-color: ${({theme}) => theme.colors.primary};
     display: none;  /* wont appear on desktop */
     flex-direction: column;
     align-items: flex-start;
@@ -211,4 +211,24 @@ export const Divider = styled.div`
     margin: 5px 0;
   }
 
+`;
+
+export const ThemeToggleButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Mobile version override */
+  @media screen and (max-width: 650px) {
+    margin: 10px;
+  }
+
+  svg {
+    color: ${({theme}) => theme.colors.accent};
+    transition: color 0.3s ease-in-out;
+  }
 `;

@@ -31,7 +31,7 @@ export const allseeProducts = [
 export const stats =[
   {
     id: 0,
-    logo: "/assets/tshirt.svg",
+    logo: "/assets/tshirt_1.png",
     numbers: "20",
     span: "k+",
     title: "Garments Produced",
@@ -39,7 +39,7 @@ export const stats =[
   },
   {
     id: 1,
-    logo: "/assets/customers.svg",
+    logo: "/assets/customers_1.png",
     numbers: "3",
     span: "k+",
     title: "Loyal Customers",

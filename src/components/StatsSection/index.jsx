@@ -8,29 +8,29 @@ import {
     StatNumbers,
     Span,
     StatsTitle,
-    StatDescription
+    StatDescription,
+    DottedLine
 } from "./styles";
 
 const StatsSection = () => {
-  return (
-    <StatsSectionWrapper>
-        <StatsSectionContainer>
-            {stats.map((stat) => {
-                return(
-                <StatCard>
-                    <StatLogo src={stat.logo} />
+    return (
+        <StatsSectionWrapper>
+            <DottedLine src="/assets/dotted_line.png" alt="dotted line" />
+            <StatsSectionContainer>
+                {stats.map((stat, index) => (
+                    <StatCard key={index}>
+                        <StatLogo src={stat.logo} />
                         <StatNumbers>
                             {stat.numbers}
                             <Span>{stat.span}</Span>
                         </StatNumbers>
-                            <StatsTitle>{stat.title}</StatsTitle>
+                        <StatsTitle>{stat.title}</StatsTitle>
                         <StatDescription>{stat.description}</StatDescription>
                     </StatCard>
-                ); 
-            })}
-    </StatsSectionContainer>
-  </StatsSectionWrapper>
-  );
+                ))}
+            </StatsSectionContainer>
+        </StatsSectionWrapper>
+    );
 };
 
 export default StatsSection;

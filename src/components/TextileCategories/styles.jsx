@@ -1,10 +1,18 @@
 import { Link } from "react-router";
 import styled from "styled-components";
 
+const LIGHT_BG_URL = '/assets/categories_section_bg.png';
+
 export const TextileCategoriesWrapper = styled.section`
   width: 100%;
   padding: 80px 20px;
-  background-image: url("/assets/categories_section_bg.png");
+
+  /* Always keep a solid color; add image only in light mode */
+  background-color: #000000;
+
+  /* Light mode: show the decorative image */
+  background-image: ${({ theme }) =>
+    theme?.colors?.mode === 'light' ? `url("${LIGHT_BG_URL}")` : 'none'};
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -17,7 +25,6 @@ export const TextileCategoriesWrapper = styled.section`
     padding: 40px 20px;
   }
 `;
-
 export const TextileCategoriesContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
@@ -37,7 +44,7 @@ export const TextileCategoriesContainer = styled.div`
 
 export const Heading = styled.h2`
   font-size: ${({ theme }) => theme.typography.desktopHeading};
-  color: ${({ theme }) => theme.colors.primaryText};
+  color: ${({ theme }) => theme.colors.secondaryText};
   text-align: center;
   font-family: "playfair display", serif;
 
@@ -131,8 +138,8 @@ export const CTAExploreMore = styled(Link)`
   z-index: 1;
   width: fit-content;
   padding: 10px 20px;
-  background-color: ${({ theme }) => theme.colors.secondaryText};
-  color: ${({ theme }) => theme.colors.primaryText};
+  background-color: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.colors.secondaryText};
   text-decoration: none;
   text-align: center;
   font-size: ${({ theme }) => theme.colors.desktopBody};

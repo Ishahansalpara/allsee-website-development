@@ -23,7 +23,7 @@ import { allseeProducts } from '../../utils/constants';
 const HeroSection = () => {
   return (
   <HeroSectionWrapper>
-    <BgImage  src='assets/hero_section_bg.png'/>
+    <BgImage  src='assets/hero_section_bg_1.jpg'/>
     <HeroSectionContainer>
         <HeroContent>
             <SubHeading>WELCOME TO ALLSEE</SubHeading>

@@ -3,6 +3,7 @@ import HeroSection from '../../components/HeroSection';
 import StatsSection from '../../components/StatsSection';
 import About from '../../components/About';
 import TextileCategories from '../../components/TextileCategories';
+import Footer from '../../components/Footer';
 const Home = () => {
 return(
   <>
@@ -10,6 +11,7 @@ return(
     <StatsSection />
     <About />
     <TextileCategories/>
+    
   </>
 );
   

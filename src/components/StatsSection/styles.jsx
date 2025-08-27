@@ -2,8 +2,11 @@ import styled from "styled-components";
 
 export const StatsSectionWrapper = styled.section`
   width: 100%;
-  background: linear-gradient(to bottom, #f56476, #e43f6f);
+  position: relative;
+  background:${({theme}) => 
+    `linear-gradient(to bottom, ${theme.colors.stats1}, ${theme.colors.stats2})`};
   padding: 80px 20px;
+  overflow: hidden;
 
   @media screen and (max-width: 768px) {
     padding: 60px 20px;
@@ -15,13 +18,14 @@ export const StatsSectionWrapper = styled.section`
 `;
 
 export const StatsSectionContainer = styled.div`
-  max-width: 1100px;
+   max-width: 1100px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
+  z-index: 2;
 
   @media screen and (max-width: 830px) {
     justify-content: center;
@@ -36,23 +40,36 @@ export const StatsSectionContainer = styled.div`
 `;
 
 export const StatCard = styled.div`
-  background: ${({ theme }) => theme.colors.secondaryText};
-  border-radius: 39px;
+background:${({theme}) => 
+    `linear-gradient(to bottom, ${theme.colors.statscard1}, ${theme.colors.statscard2})`};  border-radius: 39px;
   padding: 50px 20px;
   flex: 1;
   min-width: 250px;
   max-width: 300px;
   text-align: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 2;
 
   @media screen and (max-width: 768px) {
     width: 90%;
   }
 `;
 
+export const DottedLine = styled.img`
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* center align the line */
+  width: 120%;   /* make line stretch a bit wider than container */
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+`;
+
+
 export const StatLogo = styled.img`
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 70px;
   object-fit: cover;
 `;
 

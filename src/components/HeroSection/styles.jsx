@@ -5,6 +5,7 @@ width: 100%;
 padding: 60px 0 40px 0;
 overflow-x: hidden; 
 
+
 @media screen and (max-width: 768px) {
     padding: 40px 0 40px 0;
 }
@@ -18,11 +19,11 @@ export const BgImage = styled.img`
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    filter: brightness(0.7);
+    filter: brightness(0.6);
 `;
 
 export const HeroSectionContainer = styled.div`
-    max-width: 1200px;
+    max-width: 1250px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -168,11 +169,13 @@ export const ScrollingContent = styled.div`
 display: flex;
 padding: 20px 0;
 overflow: hidden;
-width: calc(100vw - 20px);
+width: 110vw;
+left: -5vw;
+/* width: calc(100vw - 20px); */
 gap: 20px;
 white-space: nowrap;
 scroll-behavior: smooth;
-background-color: #333333;
+background-color: #333333a7;
 position: relative;
 transform: rotate(2deg);
 z-index: 1;
@@ -240,5 +243,3 @@ export const ProductName = styled.span`
     font-size: ${({ theme }) => theme.typography.mobileSubHeading};
   }
 `;
-
-

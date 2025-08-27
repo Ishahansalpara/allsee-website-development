@@ -1,4 +1,5 @@
 import React from "react";
+import {useTheme} from "styled-components";
 import {
   AboutWrapper,
   AboutContainer,
@@ -17,17 +18,20 @@ import {
 } from "./styles";
 
 const About = () => {
+  const theme = useTheme();
+  console.log("theme in about:", theme);
+  const isDarkMode = theme.colors.mode ==="dark";
   return (
     <AboutWrapper>
       <AboutContainer>
-        <PlayButton src="/assets/play_button.svg" />
+        <PlayButton src={ isDarkMode ? "/assets/play_button_1.png" : "/assets/play_button.svg" } />
         <LeftContent>
           <MainContent>
             <SubHeading>ABOUT US</SubHeading>
             <Heading>
               Crafting Quality, Building Trust
               <Span>
-                <Arrow src="/assets/about_us_arrow.svg" />
+                <Arrow src={ isDarkMode ? "/assets/about_us_arrow_1.png" : "/assets/about_us_arrow.svg"} />
               </Span>
             </Heading>
             <Description>
@@ -54,7 +58,7 @@ const About = () => {
           </CTACheckOutOurCatalog>
         </LeftContent>
         <RightImage>
-          <AboutImage src="/assets/about_us_img.png" />
+          <AboutImage src={isDarkMode ? "/assets/about_us_img_1.png" : "/assets/about_us_img.png"} />
         </RightImage>
       </AboutContainer>
     </AboutWrapper>

@@ -1,6 +1,6 @@
 import { ThemeProvider} from "styled-components";
 import "./App.css";
-import { theme } from "./utils/themes";
+import { lightTheme, darkTheme } from "./utils/themes";
 import {BrowserRouter as Router,Routes,Route } from "react-router";
 import NavbarLayout  from "./layouts/NavbarLayout";
 import Home from "./pages/Home";
@@ -9,26 +9,22 @@ import Contact from "./pages/Contact";
 import Categories from "./pages/Categories";
 import MainCategory from "./pages/MainCategory";
 import SubCategory from "./pages/SubCategory";
+import React, { useState } from "react";
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
   return (
-  <ThemeProvider theme={theme}>
+    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
     <Router>
       <Routes>
-        {/* define your routes here */}
-        <Route element={<NavbarLayout />}>
+          <Route element={<NavbarLayout isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />}>
           <Route path="/" element={<Home />}/>
           <Route path="/about" element={<About />}/>
           <Route path="/contact" element={<Contact />}/>
           <Route path="/categories" element={<Categories/>} />
-          <Route 
-            path="/categories/:mainCategory"
-            element={<MainCategory />} 
-            />
-          <Route 
-            path="/categories/:mainCategory/:subCategory" 
-            element={<SubCategory />} 
-            />
+          <Route path="/categories/:mainCategory" element={<MainCategory />} />
+          <Route path="/categories/:mainCategory/:subCategory" element={<SubCategory />} />
         </Route>
       </Routes>
     </Router>
